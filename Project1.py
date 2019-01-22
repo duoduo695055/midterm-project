@@ -25,7 +25,7 @@ for i in original[1:]:#第一行是课程名称，要先排除第一行的信息
 #汇总每一科目的平均分和总平均分；
 second_result=['0','average']#建立新列表储存第二个结果
 second_result1=first_result#获取现有的数据
-for b in range(1,12):#左闭右开，从1到11
+for b in range(1,12):#左闭右开，从1到11，代表读取每个学生11项成绩
     student = 0
     subjectsum = 0
     for a in second_result1:
