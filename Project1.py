@@ -6,7 +6,7 @@ first_result=[]
 with open('report.txt')as f:
     original = f.readlines()
 #统计每名学生总成绩、计算平均并从高到低重新排名；
-for i in original:
+for i in original[1:]:
     scores=i.split()
     psum=0
     subject=0
@@ -43,13 +43,13 @@ for l in first_result:
     student1+=1
     l.insert(0,str(student1))
     #print(l)
-    list=2
+    lst=2
     for m in l[2:-2]:
         if int(m)<=60:
-            l[list]='fail'
-            list+=1
+            l[lst]='fail'
+            lst+=1
         else:
-            list+=1
+            lst+=1
 first_result.insert(0,second_result)
 first_result.insert(0,head)
 #print(first_result)
@@ -58,6 +58,6 @@ first_result.insert(0,head)
 for final in first_result:
     final_result=' '.join(final)+'\n'
     #print(final_result)
-    with open('newfile2.txt', 'a')as w:
+    with open('newfile3.txt', 'a')as w:
         w.writelines(final_result)
-w.close()
+
