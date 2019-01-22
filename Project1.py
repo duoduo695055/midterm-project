@@ -61,24 +61,3 @@ for final in first_result:
     with open('newfile2.txt', 'a')as w:
         w.writelines(final_result)
 w.close()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
