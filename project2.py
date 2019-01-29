@@ -57,10 +57,14 @@ while Bingo==True:
         totaltime+=times
         if periodtime == 1 or times < minwintime:
             minwintime=times
-
+        if periodtime > 0:
+            ave = float(totaltime / periodtime)
+        else:
+            ave = 0
         print('it is your %d times to play the game' %(periodtime))
         print('you played %d times in all round'%(totaltime))
         print('your quickest wintime is %d times'%(minwintime))
+        print('your average wintime is%.2f times'%(ave))
         scores[username]=[str(periodtime),str(totaltime),str(minwintime)]
         result=''
         for l in scores:
@@ -79,20 +83,4 @@ while Bingo==True:
             Bingo=True
         else:
             Bingo=False
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
