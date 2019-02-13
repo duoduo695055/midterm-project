@@ -30,7 +30,6 @@ else:
 
 print('%s you have played this game for %d times'' your quickest wintime is %d times'' your average wintime is %.2f'%(username,periodtime,minwintime,ave))
 
-
 print('Guess what I think?')
 num = randint(1, 100)
 times = 0
@@ -39,12 +38,13 @@ while Bingo==True:
     times+=1
     while True:
         print('please input the number from 1 to 100')
-        answer = int(input())
+        answer = float(input())
         try:
-            if answer>100 or answer==0:
-                print('please input the number again')
-            else:
+            if 0<answer<100:
                 break
+            else:
+                print('please input the number from 1 to 100')
+                answer = float(input())
         except:
                 pass
     if answer>num:
@@ -64,11 +64,11 @@ while Bingo==True:
         print('it is your %d times to play the game' %(periodtime))
         print('you played %d times in all round'%(totaltime))
         print('your quickest wintime is %d times'%(minwintime))
-        print('your average wintime is%.2f times'%(ave))
+        print('your average wintime is %.2f times'%(ave))
         scores[username]=[str(periodtime),str(totaltime),str(minwintime)]
         result=''
         for l in scores:
-            line=l+''+''.join(scores[l])+'\n'
+            line=l+' '+' '.join(scores[l])+'\n'
             result=result+line
 
         with open('game.txt','w')as w:
