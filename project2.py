@@ -30,16 +30,18 @@ else:
 
 print('%s you have played this game for %d times'' your quickest wintime is %d times'' your average wintime is %.2f'%(username,periodtime,minwintime,ave))
 
-print('Guess what I think?')
+
 num = randint(1, 100)
 times = 0
+print('Guess what I think?')
 Bingo=True
 while Bingo==True:
     times+=1
+    
     while True:
-        print('please input the number from 1 to 100')
-        answer = float(input())
         try:
+            print('please input the number from 1 to 100')
+            answer = float(input())
             if 0<answer<100:
                 break
             else:
